@@ -3,9 +3,12 @@ const express = require("express");
 
 // Create an Express application
 const app = express();
+const path = require("path");
 
 // Define a port
 const PORT = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware for parsing JSON requests
 app.use(express.json());
